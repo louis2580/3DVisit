@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Screen.lockCursor = true;
         prevMousePos = Input.mousePosition;
     }
 
@@ -35,6 +34,8 @@ public class Movement : MonoBehaviour {
             Move(h, v);
             // to rotate the camera
             Turning();
+            // Keep the balance feeling
+            transform.position = new Vector3(transform.position.x, 4, transform.position.z);
         }
         
     }
@@ -63,14 +64,24 @@ public class Movement : MonoBehaviour {
 
     void Turning()
     {
+
         Vector3 mousePos = Input.mousePosition;
-        float xMov = mousePos.x - prevMousePos.x;
-        float yMov = mousePos.y - prevMousePos.y;
+        if (!Input.GetMouseButton(0)) // left click not pressed
+        {
+            prevMousePos.Set(mousePos.x, mousePos.y, 0);
+        }
+        else // pressed left click
+        {
+            float xMov = mousePos.x - prevMousePos.x;
+            float yMov = mousePos.y - prevMousePos.y;
 
-        transform.Rotate(Vector3.right * xMov);
-        transform.Rotate(Vector3.up * yMov);
+            transform.Rotate(-Vector3.right * yMov);
+            transform.Rotate(Vector3.up * xMov);
 
-        Input.mousePosition.Set()
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+
+            prevMousePos.Set(mousePos.x, mousePos.y, 0);
+        }
 
     }
 
