@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour {
     public float turningSpeed = 6f;
     Vector3 movement;
     int floorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor
-    float camRayLength = 100f;
     Vector3 prevMousePos;
     bool paused = false;
 
