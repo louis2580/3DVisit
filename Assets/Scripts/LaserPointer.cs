@@ -33,7 +33,7 @@ public class LaserPointer : MonoBehaviour {
 		difference.y = 0;
 		cameraRigTransform.position = hitPoint + difference;
 	}
-		
+
 	private void ShowLaser(RaycastHit hit)
 	{
 		laser.SetActive(true);
