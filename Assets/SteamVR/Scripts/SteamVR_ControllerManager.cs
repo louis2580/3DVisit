@@ -276,5 +276,11 @@ public class SteamVR_ControllerManager : MonoBehaviour
 			SetTrackedDeviceIndex(objectIndex++, OpenVR.k_unTrackedDeviceIndexInvalid);
 		}
 	}
+
+	public void Vibrate ()
+	{
+		SteamVR_Controller.Input (2).TriggerHapticPulse (500);
+		Debug.Log ("pfgqdmo");
+	}
 }
 
