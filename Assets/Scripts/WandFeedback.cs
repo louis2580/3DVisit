@@ -11,12 +11,12 @@ public class WandFeedback : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (isInGame && !isInIt)
-		{
+		if (isInGame && !isInIt) {
 			t += Time.deltaTime; 
 			stvr.Vibrate ();
 			if (t > 1) {
@@ -27,16 +27,14 @@ public class WandFeedback : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
+	void OnTriggerEnter(Collider other)	{
 		if (other.tag == "magicWand") {
 			isInIt = true;
 			isInGame = true;
 		}
 	}
 
-	void OnTriggerExit(Collider other)
-	{
+	void OnTriggerExit(Collider other) {
 		if (other.tag == "magicWand") {
 			isInIt = false;
 			jeux.respect=false;

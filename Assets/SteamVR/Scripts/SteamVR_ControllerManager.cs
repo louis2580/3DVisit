@@ -283,4 +283,3 @@ public class SteamVR_ControllerManager : MonoBehaviour
 		Debug.Log ("pfgqdmo");
 	}
 }
-

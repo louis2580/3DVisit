@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class wire_Start : MonoBehaviour {
+	
 	public wire_End jeux;
-	// Use this for initialization
+
 	void Start () {
 		
 	}
@@ -15,14 +16,9 @@ public class wire_Start : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-
 		if (other.tag == "magicWand") {
 			Debug.Log ("aaaah ca commence!");
 			jeux.respect = true;
-
 		}
-
 	}
-
-
 }
