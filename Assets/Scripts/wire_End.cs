@@ -9,6 +9,10 @@ public class wire_End : MonoBehaviour {
 	private bool winSoundPlayed = false;
 	private bool loseSoundPlayed = true;
 
+
+	public BigBoss big;
+
+
 	public GameObject light;
 	private Light lightComponent;
 
@@ -20,9 +24,13 @@ public class wire_End : MonoBehaviour {
 
 	private float timeBeforeLostMusic = 0;
 
+	public GameObject lightDoor;
+	private Light lightDoorComponent;
+
 	// Use this for initialization
 	void Start () {
 		lightComponent = light.GetComponent<Light> ();
+		lightDoorComponent = lightDoor.GetComponent<Light> ();
 		winSoundComponent = winSound.GetComponent<AudioSource> ();
 		loseSoundComponent = loseSound.GetComponent<AudioSource> ();
 	}
@@ -60,6 +68,8 @@ public class wire_End : MonoBehaviour {
 			winSoundComponent.time = (float) 0.7;
 			winSoundComponent.Play ();
 			lightComponent.color = Color.green;
+			lightDoorComponent.color = Color.green;
+			big.OneDown ();
 		}
 	}
 

@@ -7,6 +7,7 @@ TagManager:
   - FxTemporaire
   - projectile
   - magicWand
+  - balle
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - 
   - canTeleport
   - UV
-  - 
-  - 
-  - 
-  - 
+  - B
+  - R
+  - J
+  - V
   - 
   - 
   - 

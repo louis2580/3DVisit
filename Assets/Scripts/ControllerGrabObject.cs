@@ -70,8 +70,8 @@ public class ControllerGrabObject : MonoBehaviour {
 		{
 			GetComponent<FixedJoint>().connectedBody = null;
 			Destroy(GetComponent<FixedJoint>());
-			objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
-			objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
+			objectInHand.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis(90,Vector3.up)* Controller.velocity;
+			objectInHand.GetComponent<Rigidbody>().angularVelocity = Quaternion.AngleAxis(90,Vector3.up)*Controller.angularVelocity;
 		}
 		objectInHand = null;
 	}
